@@ -11,6 +11,7 @@ public class Server {
 
 	public static void main(String[] args) {
 		try {
+			System.out.println("Server started");
 			ServerSocket ss = new ServerSocket(8888);
 			System.out.println("Waiting for client...");
 			Socket soc = ss.accept();
@@ -27,13 +28,18 @@ public class Server {
 				int num1 = Integer.parseInt(strChoices[1]);
 				int num2 = Integer.parseInt(strChoices[2]);
 				String result = "";
-				
+				int flag=0;
 				switch(option) {
 				case 1: result = "Addition is: "+(num1+num2);break;
 				case 2: result = "Subtraction is: "+(num1-num2);break;
 				case 3: result = "Multiplication is: "+(num1*num2);break;
 				case 4: result = "Division is: "+(num1/num2);break;
+				case 5: flag=1;
 				default:break;
+				}
+				
+				if(flag==1) {
+					break;
 				}
 				
 				//System.out.println(result);
@@ -42,7 +48,7 @@ public class Server {
 			
 			
 			
-			
+			System.out.println("Server terminated");
 			
 			
 			
